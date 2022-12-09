@@ -3,6 +3,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import {Route, Routes} from "react-router-dom";
 import Home from "./Containers/Home/Home";
 import Admin from "./Containers/Admin/Admin";
+import Page from "./Components/Page/Page";
 
 function App() {
   return (
@@ -14,11 +15,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path='/pages/admin' element={<Admin/>}/>
-          <Route path='/pages/about'/>
-          <Route path='/pages/python'/>
-          <Route path='/pages/javascript'/>
-          <Route path='/pages/java'/>
-          <Route path='/pages/contacts'/>
+          <Route path='/pages/:pageName' element={(
+            <Page key={Math.random()}/>
+          )} />
         </Routes>
       </div>
     </div>
